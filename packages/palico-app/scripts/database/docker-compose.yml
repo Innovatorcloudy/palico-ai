@@ -10,3 +10,7 @@ services:
       - 'POSTGRES_DB=palico-app'
     ports:
       - '5432:5432'
+      environment:
+       - 'PALICO_AGENT_API_URL=http://host.docker.internal:8000'
+       - 'PALICO_SERVICE_KEY=${PALICO_SERVICE_KEY}  # Securely load the service key from the .env file'
+
